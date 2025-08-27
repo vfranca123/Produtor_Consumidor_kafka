@@ -43,8 +43,7 @@ namespace Consumidor.Controllers
             if (response.IsSuccessStatusCode)
             {
                 // Inicia a push query para consumir os eventos filtrados
-                _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
-
+                await _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
                 return Ok(new { status = 200, message = "Stream derivada criada com sucesso!", ksqlResult = result });
             }
             else

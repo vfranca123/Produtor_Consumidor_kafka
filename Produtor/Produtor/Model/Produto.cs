@@ -10,10 +10,9 @@ namespace Produtor.Model
 
         public string nome { get; set; }
 
-
         public double valor { get; set; }
 
-        public bool estaEmPromocao { get; set; }
     }
 }
+
 

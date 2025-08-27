@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj": {}
+    "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj": {
+    "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj",
         "projectName": "Produtor",
-        "projectPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj",
+        "projectPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\obj\\",
         "projectStyle": "PackageReference",

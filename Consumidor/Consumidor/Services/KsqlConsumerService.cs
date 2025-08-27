@@ -11,7 +11,7 @@ namespace Consumidor.Services
         public KsqlConsumerService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("http://localhost:8088");
+            _httpClient.BaseAddress = new Uri("http://localhost:8088/query-stream"); 
         }
 
         public async Task ExecutePushQueryAsync(string streamName, CancellationToken stoppingToken)
@@ -19,29 +19,45 @@ namespace Consumidor.Services
             var payload = new
             {
                 sql = $"SELECT * FROM {streamName} EMIT CHANGES;",
-                properties = new
+                streamsProperties = new
                 {
-                    auto_offset_reset = "earliest"
+                    auto_offset_reset = "earliest" 
                 }
             };
 
-            var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
 
-            using var response = await _httpClient.PostAsync("/query-stream", content, stoppingToken);
-
-            response.EnsureSuccessStatusCode();
-
-            using var stream = await response.Content.ReadAsStreamAsync(stoppingToken);
-            using var reader = new StreamReader(stream);
-
-            while (!reader.EndOfStream && !stoppingToken.IsCancellationRequested)
+            try
             {
-                var line = await reader.ReadLineAsync();
+                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+                using var response = await _httpClient.PostAsync("/query-stream", content, stoppingToken);
+                response.EnsureSuccessStatusCode();
 
-                if (!string.IsNullOrWhiteSpace(line))
+                using var stream = await response.Content.ReadAsStreamAsync(stoppingToken);
+                using var reader = new StreamReader(stream);
+
+
+                var header = await reader.ReadLineAsync();
+                Console.WriteLine($"Schema: {header}");
+
+                while (!reader.EndOfStream && !stoppingToken.IsCancellationRequested)
                 {
-                    Console.WriteLine($"[KSQL EVENT] {line}");
+                    var line = await reader.ReadLineAsync();
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+
+                    // Cada linha é um JSON
+                    var jsonDoc = JsonDocument.Parse(line);
+                    var record = jsonDoc.RootElement;
+
+                    Console.WriteLine($"Filtrado: {line}");
                 }
+            }
+            catch (TaskCanceledException)
+            {
+                Console.WriteLine("Push query cancelled.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing push query: {ex.Message}");
             }
         }
     }
