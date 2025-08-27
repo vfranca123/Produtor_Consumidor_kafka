@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|solutionrelative:consumidor\\controllers\\consumidorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\consumidor\\consumidor\\services\\consumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|solutionrelative:consumidor\\services\\consumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\consumidor\\consumidor\\services\\ksqlconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|solutionrelative:consumidor\\services\\ksqlconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\consumidor\\consumidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|solutionrelative:consumidor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\consumidor\\consumidor\\config\\consumidorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|solutionrelative:consumidor\\config\\consumidorconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{846E4A1A-FFB2-4E39-B3A8-B735EDE505B5}|Consumidor\\Consumidor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\consumidor\\consumidor\\model\\streamrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "StreamRequest.cs",
               "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Model\\StreamRequest.cs",
               "RelativeDocumentMoniker": "Consumidor\\Model\\StreamRequest.cs",
@@ -47,26 +43,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConsumidorConfig.cs",
-              "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Config\\ConsumidorConfig.cs",
-              "RelativeDocumentMoniker": "Consumidor\\Config\\ConsumidorConfig.cs",
-              "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Config\\ConsumidorConfig.cs",
-              "RelativeToolTip": "Consumidor\\Config\\ConsumidorConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T13:58:15.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Program.cs",
               "RelativeDocumentMoniker": "Consumidor\\Program.cs",
               "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Program.cs",
               "RelativeToolTip": "Consumidor\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T13:54:58.038Z",
               "EditorCaption": ""
@@ -74,12 +57,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ConsumerService.cs",
-              "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Services\\ConsumerService.cs",
-              "RelativeDocumentMoniker": "Consumidor\\Services\\ConsumerService.cs",
-              "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Services\\ConsumerService.cs",
-              "RelativeToolTip": "Consumidor\\Services\\ConsumerService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAmwB8AAAAJAAAAAAAAAA==",
+              "Title": "KsqlConsumerService.cs",
+              "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Services\\KsqlConsumerService.cs",
+              "RelativeDocumentMoniker": "Consumidor\\Services\\KsqlConsumerService.cs",
+              "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Services\\KsqlConsumerService.cs",
+              "RelativeToolTip": "Consumidor\\Services\\KsqlConsumerService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwCEAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T13:46:12.725Z",
               "EditorCaption": ""
@@ -92,7 +75,7 @@
               "RelativeDocumentMoniker": "Consumidor\\Controllers\\ConsumidorController.cs",
               "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Consumidor\\Consumidor\\Controllers\\ConsumidorController.cs",
               "RelativeToolTip": "Consumidor\\Controllers\\ConsumidorController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCMAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwB8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-26T17:25:59.898Z",
               "EditorCaption": ""

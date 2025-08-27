@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\controllers\\produtorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\controllers\\produtorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\model\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\model\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\config\\kafkaconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\services\\kafkaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\controllers\\produtorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\controllers\\produtorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\model\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\model\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|c:\\users\\vitor\\onedrive\\desktop\\projeto_kafka\\produtor\\produtor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A12098A1-C762-4255-BD68-D66750599B2B}|Produtor\\Produtor.csproj|solutionrelative:produtor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Produtor\\Config\\KafkaConfig.cs",
               "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Config\\KafkaConfig.cs",
               "RelativeToolTip": "Produtor\\Config\\KafkaConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-26T16:54:57.297Z",
               "EditorCaption": ""
@@ -60,20 +60,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Model\\Produto.cs",
               "RelativeDocumentMoniker": "Produtor\\Model\\Produto.cs",
               "ToolTip": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Model\\Produto.cs",
               "RelativeToolTip": "Produtor\\Model\\Produto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-26T16:38:08.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ProdutorController.cs",
               "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Controllers\\ProdutorController.cs",
               "RelativeDocumentMoniker": "Produtor\\Controllers\\ProdutorController.cs",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Program.cs",
               "RelativeDocumentMoniker": "Produtor\\Program.cs",
@@ -94,8 +94,7 @@
               "RelativeToolTip": "Produtor\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T16:30:52.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T16:30:52.9Z"
             }
           ]
         }

@@ -5,17 +5,14 @@ namespace Produtor.Model
 {
     public class Produto
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public int Id { get; set; }
 
-        [BsonElement("Nome")]
+        public string Id { get; set; }
+
         public string nome { get; set; }
 
-        [BsonElement("preco")]
-        public double preco { get; set; }
 
-        [BsonElement("estaEmPromocao")]
+        public double valor { get; set; }
+
         public bool estaEmPromocao { get; set; }
     }
 }

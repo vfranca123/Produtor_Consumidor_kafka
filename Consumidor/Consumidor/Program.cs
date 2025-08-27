@@ -1,6 +1,3 @@
-using Confluent.Kafka;
-using Consumidor.config;
-using Consumidor.Model;
 using Consumidor.Services;
 
 
@@ -11,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<ConsumerConfig>(ConsumerConfiguration.getConsumerCofig());
-builder.Services.AddSingleton<ConsumerService>();
+builder.Services.AddSingleton<KsqlConsumerService>();
 builder.Services.AddHttpClient();
 //SWAGGER
 builder.Services.AddEndpointsApiExplorer();

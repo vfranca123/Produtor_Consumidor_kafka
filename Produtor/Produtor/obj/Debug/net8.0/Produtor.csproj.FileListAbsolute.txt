@@ -59,3 +59,4 @@ C:\Users\vitor\OneDrive\Desktop\Projeto_Kafka\Produtor\Produtor\obj\Debug\net8.0
 C:\Users\vitor\OneDrive\Desktop\Projeto_Kafka\Produtor\Produtor\obj\Debug\net8.0\Produtor.pdb
 C:\Users\vitor\OneDrive\Desktop\Projeto_Kafka\Produtor\Produtor\obj\Debug\net8.0\Produtor.genruntimeconfig.cache
 C:\Users\vitor\OneDrive\Desktop\Projeto_Kafka\Produtor\Produtor\obj\Debug\net8.0\ref\Produtor.dll
+C:\Users\vitor\OneDrive\Desktop\Projeto_Kafka\Produtor\Produtor\obj\Debug\net8.0\Produtor.sourcelink.json

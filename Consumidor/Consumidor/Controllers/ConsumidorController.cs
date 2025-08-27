@@ -12,20 +12,18 @@ namespace Consumidor.Controllers
     public class ConsumidorController : Controller
     {
         private readonly HttpClient _httpClient;
-        private readonly ConsumerService _consumerService;
-        public ConsumidorController(HttpClient httpClient , ConsumerService consumerService)
+        private readonly KsqlConsumerService _ksqlConsumerService;
+        public ConsumidorController(HttpClient httpClient , KsqlConsumerService consumerService)
         {
-            _consumerService = consumerService;
+            _ksqlConsumerService = consumerService;
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri("http://localhost:8088/ksql");
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostStream([FromBody] StreamRequest request)
+        public async Task<IActionResult> PostStream([FromBody] StreamRequest request, CancellationToken cancellationToken)
         {
-            // Validação simples para evitar problemas de injeção
-            if (string.IsNullOrWhiteSpace(request.NomeStream) ||
-                string.IsNullOrWhiteSpace(request.Filtros))
+            if (string.IsNullOrWhiteSpace(request.NomeStream) || string.IsNullOrWhiteSpace(request.Filtros))
             {
                 return BadRequest(new { status = 400, message = "Nome da stream e filtro são obrigatórios." });
             }
@@ -39,12 +37,14 @@ namespace Consumidor.Controllers
             };
 
             var content = new StringContent(JsonSerializer.Serialize(ksqlCommand), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("/ksql", content);
+            var response = await _httpClient.PostAsync("/ksql", content, cancellationToken);
             var result = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
             {
-                _consumerService.ExecuteAsync(CancellationToken.None, request.NomeStream);
+                // Inicia a push query para consumir os eventos filtrados
+                _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
+
                 return Ok(new { status = 200, message = "Stream derivada criada com sucesso!", ksqlResult = result });
             }
             else
