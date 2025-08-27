@@ -1,0 +1,66 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Consumidor",
+    "version": "1.0"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "tags": [
+          "Consumidor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StreamRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StreamRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StreamRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StreamRequest": {
+        "type": "object",
+        "properties": {
+          "nomeStream": {
+            "type": "string",
+            "nullable": true
+          },
+          "campos": {
+            "type": "string",
+            "nullable": true
+          },
+          "kafkaTopic": {
+            "type": "string",
+            "nullable": true
+          },
+          "filtros": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

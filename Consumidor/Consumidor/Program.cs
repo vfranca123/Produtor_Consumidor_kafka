@@ -1,5 +1,6 @@
 using Confluent.Kafka;
 using Consumidor.config;
+using Consumidor.Model;
 using Consumidor.Services;
 
 
@@ -11,8 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<ConsumerConfig>(ConsumerConfiguration.getConsumerCofig());
-builder.Services.AddHostedService<ConsumerService>();
-
+builder.Services.AddSingleton<ConsumerService>();
+builder.Services.AddHttpClient();
 //SWAGGER
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

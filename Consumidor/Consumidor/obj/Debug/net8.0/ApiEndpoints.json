@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "Consumidor.Controllers.ConsumidorController",
+    "Method": "PostStream",
+    "RelativePath": "",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Consumidor.Model.StreamRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
