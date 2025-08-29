@@ -1,5 +1,4 @@
-﻿using System.Net.Http.Headers;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 
 namespace Consumidor.Services
@@ -11,7 +10,7 @@ namespace Consumidor.Services
         public KsqlConsumerService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("http://localhost:8088/query-stream"); 
+            _httpClient.BaseAddress = new Uri("http://localhost:8088");
         }
 
         public async Task ExecutePushQueryAsync(string streamName, CancellationToken stoppingToken)
@@ -19,45 +18,32 @@ namespace Consumidor.Services
             var payload = new
             {
                 sql = $"SELECT * FROM {streamName} EMIT CHANGES;",
-                streamsProperties = new
+                streamsProperties = new Dictionary<string, string>
                 {
-                    auto_offset_reset = "earliest" 
+                    ["auto.offset.reset"] = "latest" 
                 }
             };
 
+            var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
 
-            try
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/query-stream") { Content = content };
+            using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, stoppingToken);
+            response.EnsureSuccessStatusCode();
+
+            await using var stream = await response.Content.ReadAsStreamAsync(stoppingToken);
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+
+            // 1a linha é o schema/header
+            var header = await reader.ReadLineAsync();
+            Console.WriteLine($"Schema: {header}");
+
+            // Lê continuamente até cancelar
+            while (!stoppingToken.IsCancellationRequested)
             {
-                var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-                using var response = await _httpClient.PostAsync("/query-stream", content, stoppingToken);
-                response.EnsureSuccessStatusCode();
-
-                using var stream = await response.Content.ReadAsStreamAsync(stoppingToken);
-                using var reader = new StreamReader(stream);
-
-
-                var header = await reader.ReadLineAsync();
-                Console.WriteLine($"Schema: {header}");
-
-                while (!reader.EndOfStream && !stoppingToken.IsCancellationRequested)
-                {
-                    var line = await reader.ReadLineAsync();
-                    if (string.IsNullOrWhiteSpace(line)) continue;
-
-                    // Cada linha é um JSON
-                    var jsonDoc = JsonDocument.Parse(line);
-                    var record = jsonDoc.RootElement;
-
-                    Console.WriteLine($"Filtrado: {line}");
-                }
-            }
-            catch (TaskCanceledException)
-            {
-                Console.WriteLine("Push query cancelled.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error executing push query: {ex.Message}");
+                var line = await reader.ReadLineAsync();
+                if (line is null) break;        // servidor fechou
+                if (line.Length == 0) continue; // keep-alive
+                Console.WriteLine($"Filtrado: {line}");
             }
         }
     }

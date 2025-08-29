@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 
 
+
 namespace Consumidor.Controllers
 {
     [Route("")]
@@ -27,23 +28,24 @@ namespace Consumidor.Controllers
             {
                 return BadRequest(new { status = 400, message = "Nome da stream e filtro são obrigatórios." });
             }
+            string sql = $"CREATE STREAM {request.NomeStream} " +
+                       $"WITH (KAFKA_TOPIC='destino', VALUE_FORMAT='JSON') AS " +
+                       $"SELECT * FROM produtos WHERE {request.Filtros};";
 
             var ksqlCommand = new
             {
-                ksql = $"CREATE STREAM {request.NomeStream} " +
-                       $"WITH (KAFKA_TOPIC='{request.KafkaTopic}', VALUE_FORMAT='JSON') AS " +
-                       $"SELECT * FROM produtos WHERE {request.Filtros};",
+                ksql = sql,
                 streamsProperties = new { }
             };
 
-            var content = new StringContent(JsonSerializer.Serialize(ksqlCommand), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonSerializer.Serialize(ksqlCommand), Encoding.UTF8, "application/vnd.ksql.v1+json");
             var response = await _httpClient.PostAsync("/ksql", content, cancellationToken);
             var result = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
             {
-                // Inicia a push query para consumir os eventos filtrados
-                //await _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
+                // Inicia a push query para consumir os eventos filtrados que rodara de forma paralela 
+               // await _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
                 return Ok(new { status = 200, message = "Stream derivada criada com sucesso!", ksqlResult = result });
             }
             else
