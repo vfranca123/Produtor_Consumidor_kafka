@@ -1,18 +1,16 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace Produtor.Model
+﻿namespace Produtor.Model
 {
     public class Produto
     {
 
-        public string Id { get; set; }
+        public string id { get; set; } = string.Empty;
 
-        public string nome { get; set; }
+        public string nome { get; set; } = string.Empty;
 
-        public double valor { get; set; }
+        public int valor { get; set; } = 0;
 
     }
 }
+
 
 

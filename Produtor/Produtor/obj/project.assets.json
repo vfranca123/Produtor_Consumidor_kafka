@@ -2,126 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Confluent.Kafka/2.11.1": {
-        "type": "package",
-        "dependencies": {
-          "librdkafka.redist": "2.11.1"
-        },
-        "compile": {
-          "lib/net8.0/Confluent.Kafka.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Confluent.Kafka.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "librdkafka.redist/2.11.1": {
-        "type": "package",
-        "build": {
-          "build/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-arm64"
-          },
-          "runtimes/linux-x64/native/alpine-librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/centos8-librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/librdkafka.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx-arm64/native/librdkafka.dylib": {
-            "assetType": "native",
-            "rid": "osx-arm64"
-          },
-          "runtimes/osx-x64/native/librdkafka.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/win-x64/native/libcrypto-3-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/librdkafka.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/librdkafkacpp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libssl-3-x64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/msvcp140.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/vcruntime140.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/zlib1.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/zstd.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libcrypto-3.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libcurl.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/librdkafka.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/librdkafkacpp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libssl-3.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/msvcp140.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/vcruntime140.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/zlib1.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/zstd.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
       "Microsoft.Extensions.ApiDescription.Server/8.0.0": {
         "type": "package",
         "build": {
@@ -143,23 +23,6 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "related": ".pdb;.xml"
-          }
-        }
-      },
-      "MongoDB.Bson/3.4.3": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.5",
-          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0/MongoDB.Bson.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/MongoDB.Bson.dll": {
-            "related": ".xml"
           }
         }
       },
@@ -228,100 +91,10 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "System.Memory/4.5.5": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
       }
     }
   },
   "libraries": {
-    "Confluent.Kafka/2.11.1": {
-      "sha512": "IV06YJSTsBvl4T282qlUADqQa5OPQOnZ+/+mQ8k0wVJy/GSjfFINamUk4zs/PtZ5+NpRdS5VHuQP7bJaTr9RBQ==",
-      "type": "package",
-      "path": "confluent.kafka/2.11.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "confluent-logo.png",
-        "confluent.kafka.2.11.1.nupkg.sha512",
-        "confluent.kafka.nuspec",
-        "lib/net462/Confluent.Kafka.dll",
-        "lib/net462/Confluent.Kafka.xml",
-        "lib/net6.0/Confluent.Kafka.dll",
-        "lib/net6.0/Confluent.Kafka.xml",
-        "lib/net8.0/Confluent.Kafka.dll",
-        "lib/net8.0/Confluent.Kafka.xml",
-        "lib/netstandard2.0/Confluent.Kafka.dll",
-        "lib/netstandard2.0/Confluent.Kafka.xml"
-      ]
-    },
-    "librdkafka.redist/2.11.1": {
-      "sha512": "fgzBgvnvDPyQ+VbGDs4piz7TYv2Gaz9niYv/ztwMoAQ+uyk0wTYR1NmyIKSN8JsE4hr5JHhDccSSNnbAFZQhBA==",
-      "type": "package",
-      "path": "librdkafka.redist/2.11.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CONFIGURATION.md",
-        "LICENSES.txt",
-        "README.md",
-        "build/librdkafka.redist.props",
-        "build/native/include/librdkafka/rdkafka.h",
-        "build/native/include/librdkafka/rdkafka_mock.h",
-        "build/native/include/librdkafka/rdkafkacpp.h",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x64/win-x64-Release/v142/librdkafkacpp.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafka.lib",
-        "build/native/lib/win/x86/win-x86-Release/v142/librdkafkacpp.lib",
-        "build/native/librdkafka.redist.targets",
-        "librdkafka.redist.2.11.1.nupkg.sha512",
-        "librdkafka.redist.nuspec",
-        "runtimes/linux-arm64/native/librdkafka.so",
-        "runtimes/linux-x64/native/alpine-librdkafka.so",
-        "runtimes/linux-x64/native/centos8-librdkafka.so",
-        "runtimes/linux-x64/native/librdkafka.so",
-        "runtimes/osx-arm64/native/librdkafka.dylib",
-        "runtimes/osx-x64/native/librdkafka.dylib",
-        "runtimes/win-x64/native/libcrypto-3-x64.dll",
-        "runtimes/win-x64/native/libcurl.dll",
-        "runtimes/win-x64/native/librdkafka.dll",
-        "runtimes/win-x64/native/librdkafkacpp.dll",
-        "runtimes/win-x64/native/libssl-3-x64.dll",
-        "runtimes/win-x64/native/msvcp140.dll",
-        "runtimes/win-x64/native/vcruntime140.dll",
-        "runtimes/win-x64/native/zlib1.dll",
-        "runtimes/win-x64/native/zstd.dll",
-        "runtimes/win-x86/native/libcrypto-3.dll",
-        "runtimes/win-x86/native/libcurl.dll",
-        "runtimes/win-x86/native/librdkafka.dll",
-        "runtimes/win-x86/native/librdkafkacpp.dll",
-        "runtimes/win-x86/native/libssl-3.dll",
-        "runtimes/win-x86/native/msvcp140.dll",
-        "runtimes/win-x86/native/vcruntime140.dll",
-        "runtimes/win-x86/native/zlib1.dll",
-        "runtimes/win-x86/native/zstd.dll"
-      ]
-    },
     "Microsoft.Extensions.ApiDescription.Server/8.0.0": {
       "sha512": "jDM3a95WerM8g6IcMiBXq1qRS9dqmEUpgnCk2DeMWpPkYtp1ia+CkXabOnK93JmhVlUmv8l9WMPsCSUm+WqkIA==",
       "type": "package",
@@ -399,25 +172,6 @@
         "microsoft.openapi.nuspec"
       ]
     },
-    "MongoDB.Bson/3.4.3": {
-      "sha512": "ZB2nCdlWtmDGItkDFh2E2kfYlXaItG414t9Np7CZhpftLypemYnxtdI52H+0b8RPqoUJD7bUvrf598sDTJd5iA==",
-      "type": "package",
-      "path": "mongodb.bson/3.4.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net472/MongoDB.Bson.dll",
-        "lib/net472/MongoDB.Bson.xml",
-        "lib/net6.0/MongoDB.Bson.dll",
-        "lib/net6.0/MongoDB.Bson.xml",
-        "lib/netstandard2.1/MongoDB.Bson.dll",
-        "lib/netstandard2.1/MongoDB.Bson.xml",
-        "mongodb.bson.3.4.3.nupkg.sha512",
-        "mongodb.bson.nuspec",
-        "packageIcon.png"
-      ]
-    },
     "Swashbuckle.AspNetCore/9.0.3": {
       "sha512": "Akk4oFgy0ST8Q8pZTfPbrt045tWNyMMiKhlbYjG3qnjQZLz645IL5vhQm7NLicc2sAAQ+vftArIlsYWFevmb2g==",
       "type": "package",
@@ -485,67 +239,10 @@
         "swashbuckle.aspnetcore.swaggerui.9.0.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
-    },
-    "System.Memory/4.5.5": {
-      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
-      "type": "package",
-      "path": "system.memory/4.5.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.5.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
-      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Confluent.Kafka >= 2.11.1",
-      "MongoDB.Bson >= 3.4.3",
       "Swashbuckle.AspNetCore >= 9.0.3"
     ]
   },
@@ -556,11 +253,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj",
+      "projectUniqueName": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj",
       "projectName": "Produtor",
-      "projectPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\Produtor.csproj",
+      "projectPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\Produtor.csproj",
       "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\Produtor\\Produtor\\obj\\",
+      "outputPath": "C:\\Users\\vitor\\OneDrive\\Desktop\\Projeto_Kafka\\produtor\\Produtor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -600,14 +297,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Confluent.Kafka": {
-            "target": "Package",
-            "version": "[2.11.1, )"
-          },
-          "MongoDB.Bson": {
-            "target": "Package",
-            "version": "[3.4.3, )"
-          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[9.0.3, )"

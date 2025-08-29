@@ -51,8 +51,8 @@
             "nullable": true
           },
           "valor": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -17,7 +17,7 @@ namespace Consumidor.Controllers
         {
             _ksqlConsumerService = consumerService;
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("http://localhost:8088/ksql");
+            _httpClient.BaseAddress = new Uri("http://localhost:8088");
         }
 
         [HttpPost]
@@ -32,7 +32,7 @@ namespace Consumidor.Controllers
             {
                 ksql = $"CREATE STREAM {request.NomeStream} " +
                        $"WITH (KAFKA_TOPIC='{request.KafkaTopic}', VALUE_FORMAT='JSON') AS " +
-                       $"SELECT * FROM produtos_stream WHERE {request.Filtros};",
+                       $"SELECT * FROM produtos WHERE {request.Filtros};",
                 streamsProperties = new { }
             };
 
@@ -43,7 +43,7 @@ namespace Consumidor.Controllers
             if (response.IsSuccessStatusCode)
             {
                 // Inicia a push query para consumir os eventos filtrados
-                await _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
+                //await _ksqlConsumerService.ExecutePushQueryAsync(request.NomeStream, cancellationToken);
                 return Ok(new { status = 200, message = "Stream derivada criada com sucesso!", ksqlResult = result });
             }
             else

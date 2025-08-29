@@ -6,20 +6,20 @@ namespace Produtor.Controllers
 {
     [ApiController]
     [Route("")]
-    public class ProdutorController : Controller
+    public class ProdutorController : ControllerBase
     {
         private readonly KafkaService _kafkaService;
-        public ProdutorController(KafkaService kafkaService) 
+
+        public ProdutorController(KafkaService kafkaService)
         {
             _kafkaService = kafkaService;
         }
-        [HttpPost]
-        public IActionResult Post([FromBody] Produto produto)
-        {
-            _kafkaService.SendMensage(produto);
-            Console.WriteLine($"Mensagem enviada: {produto}");
-            return Ok("Mensagem recebida com sucesso!");
 
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Produto produto)
+        {
+            string respose = await _kafkaService.SendMessage(produto);
+            return Ok(new { message = respose, produto });
         }
     }
 }

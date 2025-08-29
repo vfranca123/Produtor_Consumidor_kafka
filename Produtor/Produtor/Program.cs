@@ -1,5 +1,3 @@
-using Confluent.Kafka;
-using Produtor.Config;
 using Produtor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<KafkaService>();
-builder.Services.AddSingleton<ProducerConfig>(KafkaConfig.GetProducerConfig());
+builder.Services.AddHttpClient();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
