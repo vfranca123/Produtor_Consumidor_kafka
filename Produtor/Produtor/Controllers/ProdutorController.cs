@@ -8,17 +8,17 @@ namespace Produtor.Controllers
     [Route("")]
     public class ProdutorController : ControllerBase
     {
-        private readonly KafkaService _kafkaService;
+        private readonly KsqlService _KsqlService;
 
-        public ProdutorController(KafkaService kafkaService)
+        public ProdutorController(KsqlService KsqlService)
         {
-            _kafkaService = kafkaService;
+            _KsqlService = KsqlService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Produto produto)
         {
-            string respose = await _kafkaService.SendMessage(produto);
+            string respose = await _KsqlService.SendMessage(produto);
             return Ok(new { message = respose, produto });
         }
     }

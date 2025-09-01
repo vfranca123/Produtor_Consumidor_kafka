@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.Json;
 
 namespace Consumidor.Services
@@ -6,6 +7,7 @@ namespace Consumidor.Services
     public class KsqlConsumerService
     {
         private readonly HttpClient _httpClient;
+        private static readonly object _Consolelock = new object();
 
         public KsqlConsumerService(HttpClient httpClient)
         {
@@ -15,6 +17,7 @@ namespace Consumidor.Services
 
         public async Task ExecutePushQueryAsync(string streamName, CancellationToken stoppingToken)
         {
+            
             var payload = new
             {
                 sql = $"SELECT * FROM {streamName} EMIT CHANGES;",
@@ -34,6 +37,7 @@ namespace Consumidor.Services
             using var reader = new StreamReader(stream, Encoding.UTF8);
 
             // 1a linha é o schema/header
+            
             var header = await reader.ReadLineAsync();
             Console.WriteLine($"Schema: {header}");
 
@@ -42,8 +46,12 @@ namespace Consumidor.Services
             {
                 var line = await reader.ReadLineAsync();
                 if (line is null) break;        // servidor fechou
-                if (line.Length == 0) continue; // keep-alive
-                Console.WriteLine($"Filtrado: {line}");
+                if (line.Length == 0) continue; // Manter rodando se vier linha vazia
+                lock (_Consolelock) // resolve o problema de concorrência na escrita do console entre as taks
+                {
+                    Console.WriteLine($"Filtrado: {line}"); 
+                }
+                
             }
         }
     }

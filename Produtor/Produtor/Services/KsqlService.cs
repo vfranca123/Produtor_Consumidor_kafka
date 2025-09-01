@@ -7,12 +7,12 @@ using static System.Net.WebRequestMethods;
 
 namespace Produtor.Services
 {
-    public class KafkaService
+    public class KsqlService
     {
         private readonly HttpClient _httpClient;
 
 
-        public KafkaService(HttpClient httpClient)
+        public KsqlService(HttpClient httpClient)
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri("http://localhost:8088");

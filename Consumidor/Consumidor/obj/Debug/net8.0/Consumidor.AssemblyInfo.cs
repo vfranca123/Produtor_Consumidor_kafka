@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Consumidor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be1e9b74351ee864161d1889ba937f9a61dd7eb2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2f5abe0b6c79b9a77b671a930749e20e7bb7634")]
 [assembly: System.Reflection.AssemblyProductAttribute("Consumidor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Consumidor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
